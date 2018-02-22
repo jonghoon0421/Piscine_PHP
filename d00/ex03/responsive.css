@@ -1,0 +1,135 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    responsive.css                                     :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jonkim <jonkim@student.42.us.org>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2018/02/20 17:22:58 by jonkim            #+#    #+#              #
+#    Updated: 2018/02/20 19:33:09 by jonkim           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+body {
+	font-family: monospace, monospace;
+}
+.non-metal {
+	background-color: #FFEE8C;
+}
+.alkali-metal {
+	background-color: #B7E4F3;
+}
+.alkaline-earth {
+	background-color: #DFBF94;
+}
+.halogen {
+	background-color: #89A3FF;
+}
+.noble-gas {
+	background-color: #FFC3A3;
+}
+.metalloid {
+	background-color: #FF6464;
+}
+.trans-metal {
+	background-color: #A9FFA9;
+}
+.post-trans-metal {
+	background-color: #D6DFFF;
+}
+.lanth {
+	background-color: #99FFE1;
+}
+.act {
+	background-color: #C8C0FF;
+}
+.wrapper {
+	padding: 10px;
+	background-color: #FFFFFF;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 100%;
+	height: 5vh;
+	margin-bottom: 0.5%;
+}
+.el {
+	flex-grow: 1;
+	max-width: 4.5%;
+	max-height: 90%;
+	width: 4.5%;
+	height: 90%;
+	border-style: none;
+}
+.space {
+	background-color: #FFFFFF;
+}
+.el span {
+	display: block;
+	width: 100%;
+}
+.el span:nth-child(1) {
+	font-size: 0.8vmin;
+	text-align: right;
+	margin-top: .2%;
+}
+.el span:nth-child(2) {
+	font-size: 2.2vmin;
+	text-align: center;
+	font-weight: bold;
+}
+.el span:nth-child(3) {
+	font-size: 0.8vmin;
+	text-align: left;
+	margin-left: 0.1vmin;
+}
+#series .row {
+	width: 95%;
+}
+#series .row:first-child .el {
+	background-color: #99FFE1;
+}
+#series .row:last-child .el {
+	background-color: #C8C0FF;
+}
+#series label {
+	width: 4.5vmin;
+	padding: 0.2vmin;
+	font-size: 1.3vmin;
+}
+#legend {
+	margin-top: 1%;
+	width: 80%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+#legend .item {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	margin: 0px;
+	flex-grow: 0;
+	width: 45%;
+	height: 3.5%;
+	font-size: 1.5vmin;
+}
+.item span {
+	display: inline-block;
+	width: 3.5vmin;
+	height: 3.5vmin;
+}
+.item p {
+	position: relative;
+	bottom: 0.8vmin;
+	height: 100%;
+	padding-left: 1vmin;
+}
+
+.capt {
+	font-size: 1.5vmin;
+}

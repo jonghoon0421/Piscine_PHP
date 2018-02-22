@@ -1,0 +1,840 @@
+<!-- *********************************************************************** -->
+<!--                                                                         -->
+<!--                                                      :::      ::::::::  -->
+<!-- mendeleiev.html                                    :+:      :+:    :+:  -->
+<!--                                                  +:+ +:+         +:+    -->
+<!-- By: jonkim <jonkim@student.42.us.org>          +#+  +:+       +#+       -->
+<!--                                              +#+#+#+#+#+   +#+          -->
+<!-- Created: 2018/02/20 15:50:35 by jonkim            #+#    #+#            -->
+<!-- Updated: 2018/02/20 21:18:59 by jonkim           ###   ########.fr      -->
+<!--                                                                         -->
+<!-- *********************************************************************** -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Periodic Table</title>
+	<style>
+		body {
+			font-family: monospace, monospace;
+		}
+		.non-metal {
+			background-color: #FFEE8C;
+		}
+		.alkali-metal {
+			background-color: #B7E4F3;
+		}
+		.alkaline-earth {
+			background-color: #DFBF94;
+		}
+		.halogen {
+			background-color: #89A3FF;
+		}
+		.noble-gas {
+			background-color: #FFC3A3;
+		}
+		.metalloid {
+			background-color: #FF6464;
+		}
+		.trans-metal {
+			background-color: #A9FFA9;
+		}
+		.post-trans-metal {
+			background-color: #D6DFFF;
+		}
+		.lanth {
+			background-color: #99FFE1;
+		}
+		.act {
+			background-color: #C8C0FF;
+		}
+		.wrapper {
+			padding: 10px;
+			background-color: #FFFFFF;
+		}
+		.row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			width: 1050px;
+			margin-bottom: 5px;
+		}
+		.el {
+			flex-grow: 1;
+			max-width: 50px;
+			max-height: 65px;
+			width: 50px;
+			height: 65px;
+			border-style: none;
+		}
+		.space {
+			background-color: #FFFFFF;
+		}
+		.el span {
+			display: block;
+			width: 100%;
+		}
+		.el span:nth-child(1) {
+			font-size: 10px;
+			text-align: right;
+			margin-top: 2px;
+		}
+		.el span:nth-child(2) {
+			font-size: 1.55em;
+			text-align: center;
+			font-weight: bold;
+		}
+		.el span:nth-child(3) {
+			font-size: 0.75em;
+			text-align: left;
+			margin-left: 3px;
+		}
+		#series .row {
+			width: 1000px;
+		}
+		#series .row:first-child .el {
+			background-color: #99FFE1;
+		}
+		#series .row:last-child .el {
+			background-color: #C8C0FF;
+		}
+		#series label {
+			width: 85px;
+			padding: 10px;
+		}
+		#legend {
+			margin-top: 25px;
+			width: 625px;
+			height: 205px;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
+		#legend .item {
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: row;
+			margin: 1px;
+			flex-grow: 0;
+			width: 450px;
+			height: 35px;
+			font-size: 1.2em;
+		}
+		.item span {
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+		}
+		.item p {
+			position: relative;
+			bottom: 15px;
+			height: 100%;
+			padding-left: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="image">
+	<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/
+	DIMendeleevCab.jpg" style="width: 300px; height: 300px;">
+	<div>Dmitri Mendeleev</div>
+	</div>
+	<div class="wrapper">
+		<div class="row">
+			<div class="el non-metal">
+				<span>1.008</span>
+				<span>H</span>
+				<span>1</span>
+			</div>
+			<div class="el noble-gas">
+				<span>4.003</span>
+				<span>He</span>
+				<span>2</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="el alkali-metal">
+				<span>6.94</span>
+				<span>Li</span>
+				<span>3</span>
+			</div>
+			<div class="el alkaline-earth">
+				<span>9.012</span>
+				<span>Be</span>
+				<span>4</span>
+			</div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el metalloid">
+				<span>10.81</span>
+				<span>B</span>
+				<span>5</span>
+			</div>
+			<div class="el non-metal">
+				<span>12.01</span>
+				<span>C</span>
+				<span>6</span>
+			</div>
+			<div class="el non-metal">
+				<span>14.01</span>
+				<span>N</span>
+				<span>7</span>
+			</div>
+			<div class="el non-metal">
+				<span>16.00</span>
+				<span>O</span>
+				<span>8</span>
+			</div>
+			<div class="el halogen">
+				<span>19.00</span>
+				<span>F</span>
+				<span>9</span>
+			</div>
+			<div class="el noble-gas">
+				<span>20.18</span>
+				<span>Ne</span>
+				<span>10</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="el alkali-metal">
+				<span>22.99</span>
+				<span>Na</span>
+				<span>11</span>
+			</div>
+			<div class="el alkaline-earth">
+				<span>24.31</span>
+				<span>Mg</span>
+				<span>12</span>
+			</div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el space"></div>
+			<div class="el post-trans-metal">
+				<span>26.98</span>
+				<span>Al</span>
+				<span>13</span>
+			</div>
+			<div class="el metalloid">
+				<span>28.09</span>
+				<span>Si</span>
+				<span>14</span>
+			</div>
+			<div class="el non-metal">
+				<span>30.97</span>
+				<span>P</span>
+				<span>15</span>
+			</div>
+			<div class="el non-metal">
+				<span>32.06</span>
+				<span>S</span>
+				<span>16</span>
+			</div>
+			<div class="el halogen">
+				<span>35.45</span>
+				<span>Cl</span>
+				<span>17</span>
+			</div>
+			<div class="el noble-gas">
+				<span>39.95</span>
+				<span>Ar</span>
+				<span>18</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="el alkali-metal">
+				<span>39.10</span>
+				<span>K</span>
+				<span>19</span>
+			</div>
+			<div class="el alkaline-earth">
+				<span>40.08</span>
+				<span>Ca</span>
+				<span>20</span>
+			</div>
+			<div class="el trans-metal">
+				<span>44.96</span>
+				<span>Sc</span>
+				<span>21</span>
+			</div>
+			<div class="el trans-metal">
+				<span>47.88</span>
+				<span>Ti</span>
+				<span>22</span>
+			</div>
+			<div class="el trans-metal">
+				<span>50.94</span>
+				<span>V</span>
+				<span>23</span>
+			</div>
+			<div class="el trans-metal">
+				<span>52.00</span>
+				<span>Cr</span>
+				<span>24</span>
+			</div>
+			<div class="el trans-metal">
+				<span>54.94</span>
+				<span>Mn</span>
+				<span>25</span>
+			</div>
+			<div class="el trans-metal">
+				<span>55.85</span>
+				<span>Fe</span>
+				<span>26</span>
+			</div>
+			<div class="el trans-metal">
+				<span>58.93</span>
+				<span>Co</span>
+				<span>27</span>
+			</div>
+			<div class="el trans-metal">
+				<span>58.69</span>
+				<span>Ni</span>
+				<span>28</span>
+			</div>
+			<div class="el trans-metal">
+				<span>63.55</span>
+				<span>Cu</span>
+				<span>29</span>
+			</div>
+			<div class="el trans-metal">
+				<span>65.39</span>
+				<span>Zn</span>
+				<span>30</span>
+			</div>
+			<div class="el post-trans-metal">
+				<span>69.72</span>
+				<span>Ga</span>
+				<span>31</span>
+			</div>
+			<div class="el metalloid">
+				<span>72.64</span>
+				<span>Ge</span>
+				<span>32</span>
+			</div>
+			<div class="el metalloid">
+				<span>74.92</span>
+				<span>As</span>
+				<span>33</span>
+			</div>
+			<div class="el non-metal">
+				<span>78.96</span>
+				<span>Se</span>
+				<span>34</span>
+			</div>
+			<div class="el halogen">
+				<span>79.90</span>
+				<span>Br</span>
+				<span>35</span>
+			</div>
+			<div class="el noble-gas">
+				<span>83.79</span>
+				<span>Kr</span>
+				<span>36</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="el alkali-metal">
+				<span>85.47</span>
+				<span>Rb</span>
+				<span>37</span>
+			</div>
+			<div class="el alkaline-earth">
+				<span>87.62</span>
+				<span>Sr</span>
+				<span>38</span>
+			</div>
+			<div class="el trans-metal">
+				<span>88.92</span>
+				<span>Y</span>
+				<span>39</span>
+			</div>
+			<div class="el trans-metal">
+				<span>91.22</span>
+				<span>Zr</span>
+				<span>40</span>
+			</div>
+			<div class="el trans-metal">
+				<span>92.91</span>
+				<span>Nb</span>
+				<span>41</span>
+			</div>
+			<div class="el trans-metal">
+				<span>95.96</span>
+				<span>Mo</span>
+				<span>42</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(98)</span>
+				<span>Tc</span>
+				<span>43</span>
+			</div>
+			<div class="el trans-metal">
+				<span>101.1</span>
+				<span>Ru</span>
+				<span>44</span>
+			</div>
+			<div class="el trans-metal">
+				<span>102.9</span>
+				<span>Rh</span>
+				<span>45</span>
+			</div>
+			<div class="el trans-metal">
+				<span>106.4</span>
+				<span>Pd</span>
+				<span>46</span>
+			</div>
+			<div class="el trans-metal">
+				<span>107.9</span>
+				<span>Ag</span>
+				<span>47</span>
+			</div>
+			<div class="el trans-metal">
+				<span>112.4</span>
+				<span>Cd</span>
+				<span>48</span>
+			</div>
+			<div class="el post-trans-metal">
+				<span>114.8</span>
+				<span>In</span>
+				<span>49</span>
+			</div>
+			<div class="el post-trans-metal">
+				<span>118.7</span>
+				<span>Sn</span>
+				<span>50</span>
+			</div>
+			<div class="el metalloid">
+				<span>121.8</span>
+				<span>Sb</span>
+				<span>51</span>
+			</div>
+			<div class="el metalloid">
+				<span>127.6</span>
+				<span>Te</span>
+				<span>52</span>
+			</div>
+			<div class="el halogen">
+				<span>126.9</span>
+				<span>I</span>
+				<span>53</span>
+			</div>
+			<div class="el noble-gas">
+				<span>131.3</span>
+				<span>Xe</span>
+				<span>54</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="el alkali-metal">
+				<span>132.9</span>
+				<span>Cs</span>
+				<span>55</span>
+			</div>
+			<div class="el alkaline-earth">
+				<span>137.3</span>
+				<span>Ba</span>
+				<span>56</span>
+			</div>
+			<div class="el lanth">
+				<span></span>
+				<span>*</span>
+				<span></span>
+			</div>
+			<div class="el trans-metal">
+				<span>178.5</span>
+				<span>Hf</span>
+				<span>72</span>
+			</div>
+			<div class="el trans-metal">
+				<span>180.9</span>
+				<span>Ta</span>
+				<span>73</span>
+			</div>
+			<div class="el trans-metal">
+				<span>183.9</span>
+				<span>W</span>
+				<span>74</span>
+			</div>
+			<div class="el trans-metal">
+				<span>186.2</span>
+				<span>Re</span>
+				<span>75</span>
+			</div>
+			<div class="el trans-metal">
+				<span>190.2</span>
+				<span>Os</span>
+				<span>76</span>
+			</div>
+			<div class="el trans-metal">
+				<span>192.2</span>
+				<span>Ir</span>
+				<span>77</span>
+			</div>
+			<div class="el trans-metal">
+				<span>195.1</span>
+				<span>Pt</span>
+				<span>78</span>
+			</div>
+			<div class="el trans-metal">
+				<span>197.0</span>
+				<span>Au</span>
+				<span>79</span>
+			</div>
+			<div class="el trans-metal">
+				<span>200.5</span>
+				<span>Hg</span>
+				<span>80</span>
+			</div>
+			<div class="el post-trans-metal">
+				<span>204.38</span>
+				<span>Ti</span>
+				<span>81</span>
+			</div>
+			<div class="el post-trans-metal">
+				<span>207.2</span>
+				<span>Pb</span>
+				<span>82</span>
+			</div>
+			<div class="el post-trans-metal">
+				<span>209.0</span>
+				<span>Bi</span>
+				<span>83</span>
+			</div>
+			<div class="el metalloid">
+				<span>(209)</span>
+				<span>Po</span>
+				<span>84</span>
+			</div>
+			<div class="el halogen">
+				<span>(210)</span>
+				<span>At</span>
+				<span>85</span>
+			</div>
+			<div class="el noble-gas">
+				<span>(222)</span>
+				<span>Rn</span>
+				<span>86</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="el alkali-metal">
+				<span>(223)</span>
+				<span>Fr</span>
+				<span>87</span>
+			</div>
+			<div class="el alkaline-earth">
+				<span>(226)</span>
+				<span>Ra</span>
+				<span>88</span>
+			</div>
+			<div class="el act">
+				<span></span>
+				<span>**</span>
+				<span></span>
+			</div>
+			<div class="el trans-metal">
+				<span>(265)</span>
+				<span>Rf</span>
+				<span>104</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(268)</span>
+				<span>Db</span>
+				<span>105</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(271)</span>
+				<span>Sg</span>
+				<span>106</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(270)</span>
+				<span>Bh</span>
+				<span>107</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(277)</span>
+				<span>Hs</span>
+				<span>108</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(276)</span>
+				<span>Mt</span>
+				<span>109</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(281)</span>
+				<span>Ds</span>
+				<span>110</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(280)</span>
+				<span>Rg</span>
+				<span>111</span>
+			</div>
+			<div class="el trans-metal">
+				<span>(285)</span>
+				<span>Cn</span>
+				<span>112</span>
+			</div>
+			<div class="el">
+				<span>(284)</span>
+				<span>Uut</span>
+				<span>113</span>
+			</div>
+			<div class="el">
+				<span>(289)</span>
+				<span>Fl</span>
+				<span>114</span>
+			</div>
+			<div class="el">
+				<span>(288)</span>
+				<span>Uup</span>
+				<span>115</span>
+			</div>
+			<div class="el">
+				<span>(293)</span>
+				<span>Lv</span>
+				<span>116</span>
+			</div>
+			<div class="el">
+				<span>(294)</span>
+				<span>Uus</span>
+				<span>117</span>
+			</div>
+			<div class="el">
+				<span>(294)</span>
+				<span>Uuo</span>
+				<span>118</span>
+			</div>
+		</div>
+	</div>
+	<br/>
+	<div class="wrapper">
+		<div id="series">
+			<div class="row">
+				<label>
+					Lanthanide Series *
+				</label>
+				<div class="el">
+					<span>138.9</span>
+					<span>La</span>
+					<span>57</span>
+				</div>
+				<div class="el">
+					<span>140.1</span>
+					<span>Ce</span>
+					<span>58</span>
+				</div>
+				<div class="el">
+					<span>140.9</span>
+					<span>Pr</span>
+					<span>59</span>
+				</div>
+				<div class="el">
+					<span>144.2</span>
+					<span>Nd</span>
+					<span>60</span>
+				</div>
+				<div class="el">
+					<span>(145)</span>
+					<span>Pm</span>
+					<span>61</span>
+				</div>
+				<div class="el">
+					<span>150.4</span>
+					<span>Sm</span>
+					<span>62</span>
+				</div>
+				<div class="el">
+					<span>152.0</span>
+					<span>Eu</span>
+					<span>63</span>
+				</div>
+				<div class="el">
+					<span>157.2</span>
+					<span>Gd</span>
+					<span>64</span>
+				</div>
+				<div class="el">
+					<span>158.9</span>
+					<span>Tb</span>
+					<span>65</span>
+				</div>
+				<div class="el">
+					<span>162.5</span>
+					<span>Dy</span>
+					<span>66</span>
+				</div>
+				<div class="el">
+					<span>164.9</span>
+					<span>Ho</span>
+					<span>67</span>
+				</div>
+				<div class="el">
+					<span>167.3</span>
+					<span>Er</span>
+					<span>68</span>
+				</div>
+				<div class="el">
+					<span>168.9</span>
+					<span>Tm</span>
+					<span>69</span>
+				</div>
+				<div class="el">
+					<span>173.0</span>
+					<span>Yb</span>
+					<span>70</span>
+				</div>
+				<div class="el">
+					<span>175.0</span>
+					<span>Lu</span>
+					<span>71</span>
+				</div>
+			</div>
+			<div class="row">
+				<label>
+					Actinide Series **
+				</label>
+				<div class="el">
+					<span>(227)</span>
+					<span>Ac</span>
+					<span>89</span>
+				</div>
+				<div class="el">
+					<span>232</span>
+					<span>Th</span>
+					<span>90</span>
+				</div>
+				<div class="el">
+					<span>231</span>
+					<span>Pa</span>
+					<span>91</span>
+				</div>
+				<div class="el">
+					<span>238</span>
+					<span>U</span>
+					<span>92</span>
+				</div>
+				<div class="el">
+					<span>(237)</span>
+					<span>Np</span>
+					<span>93</span>
+				</div>
+				<div class="el">
+					<span>(244)</span>
+					<span>Pu</span>
+					<span>94</span>
+				</div>
+				<div class="el">
+					<span>(243)</span>
+					<span>Am</span>
+					<span>95</span>
+				</div>
+				<div class="el">
+					<span>(247)</span>
+					<span>Cm</span>
+					<span>96</span>
+				</div>
+				<div class="el">
+					<span>(247)</span>
+					<span>Bk</span>
+					<span>97</span>
+				</div>
+				<div class="el">
+					<span>(251)</span>
+					<span>Cf</span>
+					<span>98</span>
+				</div>
+				<div class="el">
+					<span>(252)</span>
+					<span>Es</span>
+					<span>99</span>
+				</div>
+				<div class="el">
+					<span>(257)</span>
+					<span>Fm</span>
+					<span>100</span>
+				</div>
+				<div class="el">
+					<span>(258)</span>
+					<span>Md</span>
+					<span>101</span>
+				</div>
+				<div class="el">
+					<span>(259)</span>
+					<span>No</span>
+					<span>102</span>
+				</div>
+				<div class="el">
+					<span>(262)</span>
+					<span>Lr</span>
+					<span>103</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div id="legend">
+			<div class="item">
+				<span class="alkali-metal"></span>
+				<p>Alkali metals</p>
+			</div>
+			<div class="item">
+				<span class="alkaline-earth"></span>
+				<p>Alkaline earth metals</p>
+			</div>
+			<div class="item">
+				<span class="trans-metal"></span>
+				<p>Transition metals</p>
+			</div>
+			<div class="item">
+				<span class="post-trans-metal"></span>
+				<p>Post-transition metals</p>
+			</div>
+			<div class="item">
+				<span class="metalloid"></span>
+				<p>Metalloid</p>
+			</div>
+			<div class="item">
+				<span class="lanth"></span>
+				<p>Lanthanides</p>
+			</div>
+			<div class="item">
+				<span class="act"></span>
+				<p>Actinides</p>
+			</div>
+			<div class="item">
+				<span class="non-metal"></span>
+				<p>Nonmetals</p>
+			</div>
+			<div class="item">
+				<span class="halogen"></span>
+				<p>Halogens</p>
+			</div>
+			<div class="item">
+				<span class="noble-gas"></span>
+				<p>Noble gases</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
